@@ -1,0 +1,28 @@
+
+
+description = "chorus-mocksuite"
+
+sourceSets {
+    test {
+        resources {
+            srcDirs = ['src/test/resources', 'src/test/java']
+        }
+    }
+}
+
+dependencies {
+//    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.4.0-b180830.0359'
+//    implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '3.0.1'
+//    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '3.0.1'
+    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
+    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '3.0.2'
+    implementation group: 'javax.activation', name: 'activation', version: "1.1.1"
+
+    //provides an Indenting XML Writer utility class
+    implementation (group: 'net.java.dev.stax-utils', name: 'stax-utils', version: '20070216')  {
+        exclude group: 'com.bea.xml', module: 'jsr173-ri'
+    }
+
+    testImplementation group: 'xmlunit', name: 'xmlunit', version: '1.6'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+}

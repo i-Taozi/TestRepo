@@ -1,0 +1,9 @@
+
+
+description = "chorus-mocksuite"
+
+dependencies {
+    compileOnly group: 'junit', name: 'junit', version: '4.13.2'
+
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+}
